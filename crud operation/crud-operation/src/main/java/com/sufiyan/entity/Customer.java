@@ -18,6 +18,7 @@ public class Customer {
 	private String email;
 	private String phone;
 	
+	public Customer() {}
 	public Customer(Long id, String firstName, String lastName, String email, String phone) {
 		super();
 		this.id = id;
