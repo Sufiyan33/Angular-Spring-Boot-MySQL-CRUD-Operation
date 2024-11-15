@@ -20,4 +20,9 @@ public class CustomerService {
 	public List<Customer> getAllCustomer(){
 		return customerRepo.findAll();
 	}
+	
+	public Customer getCustomerById(Long id) {
+		return customerRepo.findById(id).orElse(null);
+	}
+	
 }
