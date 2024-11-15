@@ -25,4 +25,7 @@ public class CustomerService {
 		return customerRepo.findById(id).orElse(null);
 	}
 	
+	public Customer updateCustomer(Customer customer) {
+		return customerRepo.save(customer);
+	}
 }
