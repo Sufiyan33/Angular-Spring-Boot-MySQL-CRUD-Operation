@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-get-all-customer',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './get-all-customer.component.html',
   styleUrl: './get-all-customer.component.css'
 })
