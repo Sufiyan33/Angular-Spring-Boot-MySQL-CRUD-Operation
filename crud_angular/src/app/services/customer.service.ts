@@ -18,4 +18,8 @@ export class CustomerService {
   getAllCustomer(): Observable<any>{
     return this.http.get(BASIC_URL + "/customer/all")
   }
+
+  getCustomerById(id: number): Observable<any>{
+    return this.http.get(BASIC_URL + "/customer/" + id)
+  }
 }
