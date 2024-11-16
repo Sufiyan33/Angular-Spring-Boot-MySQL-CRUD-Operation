@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-customer',
@@ -12,7 +13,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class PostCustomerComponent implements OnInit{
 
   postCustomerForm: FormGroup = new FormGroup({});
-  constructor(private service: CustomerService, private fb:FormBuilder){}
+  constructor(private service: CustomerService, private fb:FormBuilder,
+    private router: Router
+  ){}
 
   ngOnInit(){
     this.postCustomerForm = this.fb.group({
@@ -28,6 +31,7 @@ export class PostCustomerComponent implements OnInit{
     this.service.postCustomer(this.postCustomerForm.value).subscribe((res)=>{
       console.log(res);
       this.postCustomerForm.reset();
+      this.router.navigateByUrl("/");
     })
   }
 }
