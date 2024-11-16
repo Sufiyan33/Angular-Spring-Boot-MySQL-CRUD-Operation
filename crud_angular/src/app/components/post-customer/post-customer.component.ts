@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-post-customer',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './post-customer.component.html',
   styleUrl: './post-customer.component.css'
 })
 export class PostCustomerComponent {
 
-  postCustomerForm?: FormGroup;
+  postCustomerForm: FormGroup = new FormGroup({});
   constructor(private service: CustomerService, private fb:FormBuilder){}
 
   ngOnIt(){
