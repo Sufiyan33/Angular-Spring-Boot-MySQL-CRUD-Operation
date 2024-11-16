@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-get-all-customer',
@@ -10,6 +11,7 @@ import { CustomerService } from '../../services/customer.service';
 })
 export class GetAllCustomerComponent implements OnInit {
 
+  customers: any[] = [];
   constructor(private service: CustomerService){}
 
   ngOnInit(): void {
@@ -19,6 +21,7 @@ export class GetAllCustomerComponent implements OnInit {
   getAllCustomers(){
     this.service.getAllCustomer().subscribe((res)=>{
       console.log(res);
+      this.customers = res;
     })
   }
 }
