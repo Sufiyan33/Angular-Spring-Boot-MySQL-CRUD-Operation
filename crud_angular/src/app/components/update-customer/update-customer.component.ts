@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -16,7 +16,7 @@ export class UpdateCustomerComponent implements OnInit{
 
   id!: number;
   constructor(private route: ActivatedRoute, 
-    private service: CustomerService, private fb: FormBuilder){
+    private service: CustomerService, private fb: FormBuilder, private router: Router){
       this.id = this.route.snapshot.params['id'];
     }
 
@@ -35,6 +35,14 @@ export class UpdateCustomerComponent implements OnInit{
     this.service.getCustomerById(this.id).subscribe((res) =>{
       console.log(res);
       this.updateCustomerForm.patchValue(res);
+    })
+  }
+
+  updateCustomerData(){
+    this.service.updateCustomer(this.id, this.updateCustomerForm.value).subscribe((res) =>{
+      console.log(res);
+      this.updateCustomerForm.reset();
+      this.router.navigateByUrl("/");
     })
   }
 }
