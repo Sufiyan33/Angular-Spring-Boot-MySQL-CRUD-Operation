@@ -24,4 +24,11 @@ export class GetAllCustomerComponent implements OnInit {
       this.customers = res;
     })
   }
+
+  deleteCustomer(id: number){
+    this.service.deleteCustomerById(id).subscribe((res) =>{
+      console.log(res);
+      this.getAllCustomers();
+    })
+  }
 }
