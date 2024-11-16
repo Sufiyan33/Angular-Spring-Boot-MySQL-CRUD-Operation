@@ -42,7 +42,9 @@ export class UpdateCustomerComponent implements OnInit{
     this.service.updateCustomer(this.id, this.updateCustomerForm.value).subscribe((res) =>{
       console.log(res);
       this.updateCustomerForm.reset();
-      this.router.navigateByUrl("/");
+      if(res.id != null){
+        this.router.navigateByUrl("/");
+      }
     })
   }
 }
