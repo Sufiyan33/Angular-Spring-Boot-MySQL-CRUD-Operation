@@ -12,6 +12,6 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   postCustomer(customer: any): Observable<any>{
-    return this.http.post(BASIC_URL + "customer", customer);
+    return this.http.post(BASIC_URL + "/customer", customer);
   }
 }
