@@ -1,24 +1,39 @@
-<div class="container">
-    <div class="form-container">
-      <h2 class="form-title">Post New Customer</h2> 
-      <form [formGroup]="postCustomerForm">
-        <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-success">
+                <h5 style="color: white; font-weight: bold; text-align: center;" >Post Customer</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" formControlName="firstName" class="form-control" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" formControlName="lastName" class="form-control" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="email">Email:</label>
+                            <input type="email" formControlName="email" class="form-control" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" formControlName="phone" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-6 text-center">
+                            <button type="button" class="btn btn-secondary">Reset</button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button type="button" class="btn btn-success">Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <button type="button">Post</button>
-      </form> 
     </div>
 </div>
