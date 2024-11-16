@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-get-all-customer',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
   templateUrl: './get-all-customer.component.html',
   styleUrl: './get-all-customer.component.css'
 })
-export class GetAllCustomerComponent {
+export class GetAllCustomerComponent implements OnInit {
 
+  constructor(private service: CustomerService){}
+
+  ngOnInit(): void {
+    this.getAllCustomers();
+  }
+
+  getAllCustomers(){
+    this.service.getAllCustomer().subscribe((res)=>{
+      console.log(res);
+    })
+  }
 }
