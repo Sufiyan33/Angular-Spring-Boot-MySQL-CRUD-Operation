@@ -10,18 +10,46 @@
                         <div class="col-6">
                             <label for="firstName">First Name:</label>
                             <input type="text" formControlName="firstName" class="form-control" required>
+                            <div class="text-danger">
+                                @if (postCustomerForm.controls['firstName'].touched) {
+                                    @if (postCustomerForm.controls['firstName'].errors?.['required']) {
+                                        <span>firstName is required</span>
+                                    }
+                                }
+                            </div>
                         </div>
                         <div class="col-6">
                             <label for="lastName">Last Name:</label>
                             <input type="text" formControlName="lastName" class="form-control" required>
+                            <div class="text-danger">
+                                @if (postCustomerForm.controls['lastName'].touched) {
+                                    @if (postCustomerForm.controls['lastName'].errors?.['required']) {
+                                        <span>lastName is required</span>
+                                    }
+                                }
+                            </div>
                         </div>
                         <div class="col-6">
                             <label for="email">Email:</label>
                             <input type="email" formControlName="email" class="form-control" required>
+                            <div class="text-danger">
+                                @if (postCustomerForm.controls['email'].touched) {
+                                    @if (postCustomerForm.controls['email'].errors?.['required']) {
+                                        <span>email is required</span>
+                                    }
+                                }
+                            </div>
                         </div>
                         <div class="col-6">
                             <label for="phone">Phone:</label>
                             <input type="tel" formControlName="phone" class="form-control" required>
+                            <div class="text-danger">
+                                @if (postCustomerForm.controls['phone'].touched) {
+                                    @if (postCustomerForm.controls['phone'].errors?.['required']) {
+                                        <span>phome is required</span>
+                                    }
+                                }
+                            </div>
                         </div>
                     </div>
                     <div class="row pt-2">
@@ -29,7 +57,7 @@
                             <button type="button" class="btn btn-secondary" (click)="onReset()">Reset</button>
                         </div>
                         <div class="col-6 text-center">
-                            <button type="button" class="btn btn-success" (click)="postCustomer()">Post</button>
+                            <button type="button" class="btn btn-success" [disabled]="postCustomerForm.invalid" (click)="postCustomer()">Post</button>
                         </div>
                     </div>
                 </form>
