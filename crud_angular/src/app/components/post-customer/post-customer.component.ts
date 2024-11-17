@@ -34,4 +34,8 @@ export class PostCustomerComponent implements OnInit{
       this.router.navigateByUrl("/");
     })
   }
+
+  onReset(){
+    this.postCustomerForm.reset();
+  }
 }

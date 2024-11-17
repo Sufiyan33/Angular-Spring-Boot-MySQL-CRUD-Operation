@@ -47,4 +47,8 @@ export class UpdateCustomerComponent implements OnInit{
       }
     })
   }
+
+  onReset(){
+    this.updateCustomerForm.reset();
+  }
 }
