@@ -16,10 +16,16 @@ If you are a beginner or new in Angular then definately, you should see this.
 
 # How to get started
   - clone this repository.
+    ```bash
+    git clone https://github.com/Sufiyan33/Angular-Spring-Boot-MySQL-CRUD-Operation.git
+    ```
   - run:
-    ```npm i install```
+    ```bash
+    npm i install
   - It will download all required dependencies.
   - But before running angular application, first run backend application whihc will run on ```htpp://localhost:9000```
   - All endpoints are in backend application.
-  - Run angular application on any port : ```42000```
+  - Run angular application on any port :
+    ```bash
+    4200
 
