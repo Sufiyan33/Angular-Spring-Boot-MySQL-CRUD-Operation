@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Constant } from '../../const/Constant';
 
 @Component({
   selector: 'app-post-customer',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class PostCustomerComponent implements OnInit{
 
+  validationMessage: any = Constant.VALIDATING_MESSAGE;
   postCustomerForm: FormGroup = new FormGroup({});
   constructor(private service: CustomerService, private fb:FormBuilder,
     private router: Router

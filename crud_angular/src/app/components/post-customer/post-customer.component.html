@@ -13,7 +13,7 @@
                             <div class="text-danger">
                                 @if (postCustomerForm.controls['firstName'].touched) {
                                     @if (postCustomerForm.controls['firstName'].errors?.['required']) {
-                                        <span>firstName is required</span>
+                                        <span>{{validationMessage.FIRST_NAME_REQUIRED}}</span>
                                     }
                                 }
                             </div>
@@ -24,7 +24,7 @@
                             <div class="text-danger">
                                 @if (postCustomerForm.controls['lastName'].touched) {
                                     @if (postCustomerForm.controls['lastName'].errors?.['required']) {
-                                        <span>lastName is required</span>
+                                        <span>{{validationMessage.LAST_NAME_REQUIRED}}</span>
                                     }
                                 }
                             </div>
@@ -35,7 +35,7 @@
                             <div class="text-danger">
                                 @if (postCustomerForm.controls['email'].touched) {
                                     @if (postCustomerForm.controls['email'].errors?.['required']) {
-                                        <span>email is required</span>
+                                        <span>{{validationMessage.EMAIL_REQUIRED}}</span>
                                     }
                                 }
                             </div>
@@ -46,7 +46,7 @@
                             <div class="text-danger">
                                 @if (postCustomerForm.controls['phone'].touched) {
                                     @if (postCustomerForm.controls['phone'].errors?.['required']) {
-                                        <span>phome is required</span>
+                                        <span>{{validationMessage.PHONE_REQUIRED}}</span>
                                     }
                                 }
                             </div>
