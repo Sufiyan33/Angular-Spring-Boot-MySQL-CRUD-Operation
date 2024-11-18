@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Constant } from '../../const/Constant';
 
 @Component({
   selector: 'app-update-customer',
@@ -12,6 +13,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class UpdateCustomerComponent implements OnInit{
   
+  validationMessage: any = Constant.VALIDATING_MESSAGE;
   updateCustomerForm: FormGroup= new FormGroup({});
 
   id!: number;
